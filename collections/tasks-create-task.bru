@@ -1,0 +1,28 @@
+meta {
+  name: tasks/create-task
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/tasks
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "title": "Write Bruno Collection",
+    "description": "Create API test collection",
+    "dueDate": "2026-02-15"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

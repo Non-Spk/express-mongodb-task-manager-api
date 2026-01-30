@@ -1,0 +1,26 @@
+meta {
+  name: tasks/update-task
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{baseUrl}}/tasks/{{taskId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "status": "completed"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
